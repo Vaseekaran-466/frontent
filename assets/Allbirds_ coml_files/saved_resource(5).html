@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)https://www.allbirds.com/web-pixels@73b305c4w82c1918fpb7086179m603a4010/custom/web-pixel-24313936@1/sandbox/modern/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Allbirds: Comfortable, Sustainable Shoes &amp; Apparel</title>
+    <script src="./s73b305c4w82c1918fpb7086179m603a4010m.js.download"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+// ShopRunner retailer ID
+const partnerCode = 'ALLBIRDS'
+// this shopify store's URL
+const expectedOrigin = 'https://weareallbirds.myshopify.com'
+// the checkout steps on which checkout extensibity is enabled; see map in getPageType function below
+const checkoutPagesToTrack = ['checkout', 'shipping', 'payment', 'order confirmation']
+const isDev = false
+
+
+/* DO NOT MODIFY BELOW THIS LINE */
+
+// ShopRunner ShoppingBundle analytics module
+const scriptUrl = 'https://assets.prd.shoprunner.io/@shoprunner/analytics@1/es6/index.js'
+const transmitPostMessageEventType = "shoprunner-custom-web-pixel-event"
+
+
+// track page view
+/*
+  only track pages specified in checkoutPagesToTrack (above); these should be the pages on which checkout extensibity is enabled;
+  ShoppingBundle will track a page view on all other pages when its init function is called
+*/
+analytics.subscribe("page_viewed", async (event) => {
+  const path = event.context.window.location.pathname
+  console.log(`Path: ${path}`)
+  const pageType = getPageType(path)
+  console.log(`Page viewed; pageType: ${pageType}`)
+  if (!checkoutPagesToTrack.includes(pageType)) return
+  console.log(`Tracking analytics event directly with ShoppingBundle analytics module: ${event.name}`)
+  const analyticsBundle = await import(scriptUrl)
+  const a = analyticsBundle.init(window, document, {
+    partnerCode,
+    pageType,
+    isDev
+  })
+  a.setPageType(pageType)
+  a.trackSBPageView()
+})
+
+
+// track product viewed; in addition, the function trackVariantChanged tracks the same event on variant change
+analytics.subscribe("product_viewed", event => {
+  console.log(`Pushing analytics event: ${event.name}`)
+  push({ event, init })
+})
+
+// track add to cart
+analytics.subscribe("product_added_to_cart", event => {
+  console.log(`Pushing analytics event: ${event.name}`)
+  push({ event, init })
+})
+
+// track order placed
+analytics.subscribe("checkout_completed", async (event) => {
+  // console.log(`Pushing analytics event: ${event.name}`)
+  // push({ event, init })
+    const checkout = event.data.checkout
+    // console.log('checkout', checkout)
+    const { order, lineItems, shippingLine, totalPrice, subtotalPrice, totalTax } = checkout
+    const { id } = order
+    const orderItems = lineItems.map(line => {
+      const { quantity, variant } = line
+      const { sku } = variant
+      return { sku, quantity }
+    })
+    const payload = {
+      orderId: id,
+      orderItems,
+      subtotal: subtotalPrice.amount * 100,
+      tax: totalTax.amount * 100,
+      shippingPrice: shippingLine.price.amount * 100,
+      orderTotal: totalPrice.amount * 100,
+      paymentType: ''
+    }
+    console.log(`Tracking analytics event directly with ShoppingBundle analytics module: ${event.name}`)
+  const analyticsBundle = await import(scriptUrl)
+  const a = analyticsBundle.init(window, document, {
+    partnerCode,
+    pageType: 'processing',
+    isDev
+  })
+  a.trackOrder(payload)
+})
+
+/*
+  post a message to the top frame (current window), where an event listener is set up to handle events from this web pixel sandboxed iframe;
+  this allows us to include the origin header in the request we're sending to our API because it's coming from the top window;
+  this is a workaround because origin is set to null within a sandboxed iframe (the sandbox attribute allow-same-origin is absent from iframes
+  in Shopify's WebPixelsManagerSandboxContainer)
+*/
+async function push (payload) {
+  try {
+    payload.type = transmitPostMessageEventType
+    window.top.postMessage(payload, expectedOrigin)
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function getPageType (path) {
+  const shopifyToShopRunnerPageTypeMap = {
+    '/home.*': 'home',
+    '/landing.*': 'landing',
+    '/searchresults.*': 'search results',
+    '/account.*': 'account',
+    '/store_location.*': 'store location',
+    '/brand.*': 'brand',
+    '/category.*': 'category',
+    '/collections/.*/products.*': 'product',
+    '/collection.*': 'collection',
+    '/products.*': 'product',
+    '/cart.*': 'cart',
+    '/checkouts.*/information.*': 'checkout',
+    '/checkouts.*/shipping.*': 'shipping',
+    '/checkouts.*/payment.*': 'payment',
+    '/checkouts.*/review.*': 'review',
+    '/checkouts.*/thank-you.*': 'order confirmation',
+    '/checkout/contact_information.*': 'checkout',
+    '/checkout/shipping.*': 'shipping',
+    '/checkout/payment.*': 'payment',
+    '/checkout/processing.*': 'order processing',
+    '/checkout/thank_you.*': 'order confirmation',
+  }
+  const prpMatch = shopifyToShopRunnerPageTypeMap[path]
+  if (prpMatch) return prpMatch
+  for (const [key, val] of Object.entries(shopifyToShopRunnerPageTypeMap)) {
+    const rgx = new RegExp(key)
+    const matches = path.match(rgx)
+    if (matches) return val
+  }
+  return ''
+}
+
+});})(self.webPixelsManager.createShopifyExtend('24313936', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

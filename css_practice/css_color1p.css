@@ -1,0 +1,39 @@
+.header_anbe{
+    width:auto;
+    height: 250px;
+    background-color: rgba(12, 13, 13, 0.925);
+    color: transparent;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content:space-evenly;
+    color:white;
+    background-image: url(../imge/Anbe_sivam_2.webp);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+.image img{
+    width: 430px;
+    border-radius: 30px;
+    
+}
+.about_sivam{
+    text-size-adjust: 15px;
+    font: bolder;
+    font-style:unset;
+    font-weight: 300px;
+}
+.about_sivam a{
+    text-decoration: none;
+    color: rgba(225, 11, 11, 0.963);
+    background-origin: padding-box;
+}
+.about_sivam h1{
+    font-weight: bolder;
+    padding-left:60px;
+}
+

@@ -1,0 +1,332 @@
+
+body {
+    background-color: rgb(227, 217, 194);
+height: 100%;
+    
+    
+}
+
+header {
+    background-image: url(../bird_project/home_page_img\ .jpg);
+    background-size: cover;
+    width: auto;
+    height: 600px;
+    padding: 15px;
+    border-radius: 24px;
+   
+
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    border-radius: 20px;
+    margin: 0%;
+    padding: 25px;
+    border: 2px solid black;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    
+
+}
+.search-box {
+      position: relative;
+      width: 350px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 35px 10px 10px; 
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .search-box i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: gray;
+      pointer-events: none; /* user click input only */
+    }
+
+
+
+
+.nav-link {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link a {
+    font-weight: bolder;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-top: 3px;
+
+
+}
+
+.img_shoes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin: 6px;
+}
+
+.product1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.product1 img {
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.product1 h1{
+    position: absolute;
+    font-weight: 500;
+    text-size-adjust: 8px;
+    width: 140px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 28px;
+    border: color 10px solid white ;
+    cursor: pointer;
+    opacity:1 ;
+    display: flex;
+    text-align:center;
+    justify-content: center;
+   background-color:  rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.product1 h1:hover{
+    transform: scale(0.9)
+}
+.grid_container{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap: 20px;
+    max-width:100vh;
+
+}
+.grid_image_container{
+    position: relative;
+
+}
+.card_1 img{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.card_2 img{
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+
+.head1 h1{
+    text-align: center;
+    font-family: "Work Sans", sans-serif;
+  font-weight:bolder;
+  font-style: normal;
+  font-size: 5vh;
+
+    
+}
+.head1 p{
+    text-align: center;
+    font-size: 1.5rem;
+     font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    font-display:inherit ;
+    font-weight:normal ;
+    font-size-adjust: ;
+}
+
+.one{
+
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: lighter;
+
+}
+
+.header-2{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 20px;
+    font-size: 2.5vh;
+}
+
+.header-2 p{
+    font-size: large;
+    text-align: center;
+    font-size: 20px;
+
+}
+.header-2 img{
+    width:854px;
+    height: 460px;
+    justify-content: left;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.list-items{
+    padding: 25px;
+    margin-top: 20px;
+
+}
+.product-list{
+    background-color: white;
+    width: 310px;
+    height: 400px;
+    border:0.5px solid black;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+}
+.list-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+.runner-tree h3{
+    font-size: x-large;
+    font-weight: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+   bottom: 80px;
+   right: 80px;
+}
+.runner-tree p{
+    font-size: 2vh;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+     position: absolute;
+   bottom: 60px;
+   right: 120px;
+}
+
+.button1{
+    width: 21px;
+    height: 20px;
+    background-color:gray;
+    border-radius: 30px;
+    align-items: center;
+}
+.button2{
+    width: 21px;
+    height: 20px;
+    background-color:rgb(10, 32, 29);
+    border-radius: 30px;
+    align-items: center;
+}
+.button3{
+    width: 21px;
+    height: 20px;
+    background-color:navy;
+    border-radius: 30px;
+    align-items: center;
+}
+.button4{
+    width: 21px;
+    height: 20px;
+    background-color:white;
+    border-radius: 30px;
+    align-items: center;
+}
+.footer{
+    width:100%;
+    height:20rem;
+    background-color:rgb(14, 12, 12);
+    color: white;
+    margin: 0%;
+    padding:0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 12px;
+}
+.company_footer h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.company_footer a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    column-gap: 30px;
+    font-size: 15px;
+}
+.produt_footer{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+
+}
+.produt_footer a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    font-size: 15px;
+}
+.help{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.help a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    font-size: 15px;
+}
+@media (max-width:992px){
+    body{
+        width: fit-content;
+    }
+}
+@media (max-width:600px){
+    body{
+        width: fit-content;
+
+    }
+}
+
+@media (max-width:520px){
+    body{
+        width: fit-content;
+
+    }
+}
+
+@media (max-width:992px){
+    body{
+        width: fit-content;
+
+    }
+}
+

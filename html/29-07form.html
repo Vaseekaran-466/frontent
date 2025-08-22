@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <main>
+            <div>
+                <h1>fill the your details</h1>
+            </div>
+            <form action="project-2.html" method="get" autocomplete="on" target="_blank">
+                <table>
+                    <tr>
+                        <td><label for="name">enter the name :</label></td>
+                        <td><input type="text" placeholder="your full name" required /><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="num">enter the number :</label></td>
+                        <td><input type="number" placeholder="" required /><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="add">enter the address:</label></td>
+                        <td><textarea rows="3" cols="" placeholder="fill addreass here..." required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">select your genter :</label></td>
+                        <td>
+                            <input type="radio" value="male" name="gender">
+                            <label for="male">male</label>
+
+                            <input type="radio" value="female" name="gender">
+                            <label for="female">female</label>
+
+                            <input type="radio" value="others" name="gender">
+                            <label for="others">others</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="quali">qualification :</label></td>
+                        <td>
+                            <select>
+                                <optgroup>
+                                    <option value="" disabled="selected">select ug qualification</option>
+                                    <option value="BBA">BBA</option>
+                                    <option value="BSC">BSC</option>
+                                    <option value="BA">BA</option>
+                                    <option value="B.COM">B.COM</option>
+                                    <option value="BCA">BCA</option>
+                                </optgroup>
+                                <optgroup>
+                                    <option value="" disabled="selected">selcte pg qualification</option>
+                                    <option value="MSC">MSC</option>
+                                    <option value="MBA">MBA</option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="MA">MA</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="birth">enter your birthday :</label></td>
+                        <td><input type="date" name="birth" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hobie">choose your hobbies</label></td>
+                        <td>
+                            <input type="checkbox" name="hobie" />
+                            <label for="read">reading</label>
+
+                            <input type="checkbox" name="hobie" value="music" />
+                            <label for="music">music</label>
+
+                            <input type="checkbox" name="hobie" value="games" />
+                            <label for="games">games</label>
+
+                            <input type="checkbox" value="others" name="hobie" />
+                            <label for="other">other</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="country">select your country :</label></td>
+                        <td>
+                            <select>
+                                <option value="" name="country" selected="disabled">choose</option>
+                                <option value="india" name="country">india</option>
+                                <option value="usa" name="country">usa</option>
+                                <option value="uk" name="country">uk</option>
+                                <option value="others" name="country">others</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="file">upload file:</label></td>
+                        <td><input type="file" name="file" required></td>
+                    </tr>
+                    <tr>
+                            <td><label for="term"> i aggre to the <a href="#">terms and condition accept</a></label></td>
+                         <td><input type="checkbox" name="term" required /></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="sumbite" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="reset" value="clear" /></td>
+                    </tr>
+                </table>
+            </form>
+        </main>
+    </center>
+</body>
+
+</html>
